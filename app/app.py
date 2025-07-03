@@ -22,13 +22,6 @@ with st.sidebar:
         "[Get an OpenAI API key](https://platform.openai.com/account/api-keys)"
         os.environ['OPENAI_API_KEY'] = openai_api_key
 
-    st.subheader("🧑‍💻 Workflow")
-    try:
-        graph_bytes = st.session_state.accountant.plot_graph()
-        st.image(graph_bytes, caption="LLM Accountant Workflow")
-    except Exception as e:
-        st.error(f"Could not load workflow graph: {e}")
-
 
 
 
@@ -51,6 +44,14 @@ if openai_api_key:
         
         st.session_state.accountant = accountant
         st.session_state.test_rows = list(test_df.iterrows())
+
+with st.sidebar
+    st.subheader("🧑‍💻 Workflow")
+    try:
+        graph_bytes = st.session_state.accountant.plot_graph()
+        st.image(graph_bytes, caption="LLM Accountant Workflow")
+    except Exception as e:
+        st.error(f"Could not load workflow graph: {e}")
 
     st.title("🧾 IA do Contador - MVP")
 
