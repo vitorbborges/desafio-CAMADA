@@ -11,6 +11,10 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 from src.llm_application import LLMAccountant, doc2lancamento, row2doc
 
+# Initialize session state first
+if 'current_index' not in st.session_state:
+    st.session_state.current_index = 0
+
 openai_api_key = os.getenv("OPENAI_API_KEY")
 
 # UI
@@ -26,9 +30,6 @@ with st.sidebar:
         os.environ['OPENAI_API_KEY'] = openai_api_key
 
 if openai_api_key and openai_api_key.strip():
-    
-    if 'current_index' not in st.session_state:
-        st.session_state.current_index = 0
         
     if 'accountant' not in st.session_state:
         # Preparation
