@@ -20,15 +20,16 @@ with st.sidebar:
             "OpenAI API Key 🔐", key="langchain_search_api_key_openai", type="password"
         )
         "[Get an OpenAI API key](https://platform.openai.com/account/api-keys)"
+    
+    # Only set environment variable if we have a non-empty key
+    if openai_api_key and openai_api_key.strip():
         os.environ['OPENAI_API_KEY'] = openai_api_key
 
-
-
-
-if openai_api_key:
+if openai_api_key and openai_api_key.strip():
     
     if 'current_index' not in st.session_state:
         st.session_state.current_index = 0
+        
     if 'accountant' not in st.session_state:
         # Preparation
         df = pd.read_csv("data/input_com_categorias.csv")
@@ -45,13 +46,10 @@ if openai_api_key:
         st.session_state.accountant = accountant
         st.session_state.test_rows = list(test_df.iterrows())
 
-with st.sidebar:
-    st.subheader("🧑‍💻 Workflow")
-    try:
+    with st.sidebar:
+        st.subheader("🧑‍💻 Workflow")
         graph_bytes = st.session_state.accountant.plot_graph()
         st.image(graph_bytes, caption="LLM Accountant Workflow")
-    except Exception as e:
-        st.error(f"Could not load workflow graph: {e}")
 
     st.title("🧾 IA do Contador - MVP")
 
@@ -63,15 +61,15 @@ with st.sidebar:
         doc = row2doc((idx, row))
         lancamento = doc2lancamento(doc)
         response = st.session_state.accountant.invoke(lancamento)
-        category = response['category']
+        category = response.category
         
         data = {
-            'Descrição': [''.join(response["desc"].split(';')[:-1])],
-            'Valor': [f"R${response['value']}"],
+            'Descrição': [''.join(response.desc.split(';')[:-1])],
+            'Valor': [f"R${response.value}"],
             'Conta Contábil': [category.category],
             'Justificativa LLM': [category.explanation],
-            'Status': [response['status']],
-            'Data': [response["date"]],
+            'Status': [response.status],
+            'Data': [response.date],
         }
         
         dataframe = pd.DataFrame(data).set_index('Data')
@@ -82,7 +80,7 @@ with st.sidebar:
         with col1:
             if st.button("Aprovar Conta Contábil", key="approve_btn", icon="✅", use_container_width=True):
                 st.success("Lançamento aprovado!")
-                lancamento.status = "Confirmado"
+                response.status = "Confirmado"
                 st.session_state.accountant.add_source_of_truth(doc)
                 st.session_state.current_index += 1
                 st.rerun()
@@ -100,7 +98,7 @@ with st.sidebar:
             )
             if st.button("Confirmar", key="confirm_btn"):
                 doc.metadata['category'] = true_category
-                lancamento.status = "Alterado"
+                response.status = "Alterado"
                 st.session_state.accountant.add_source_of_truth(doc)
                 st.session_state.show_input = False
                 st.session_state.current_index += 1
