@@ -1,0 +1,182 @@
+Data,Descrição da Transação,Valor
+01/01/2025,Pagamento de aluguel da sede - Janeiro/2025,5500.00
+02/01/2025,Compra de suprimentos de escritório - Papelaria X,230.50
+03/01/2025,PIX recebido de Cliente ABC - Consultoria Fev,15000.00
+04/01/2025,Conta de luz - Eletropaulo - Fatura jan/2025,480.75
+05/01/2025,Salário do mês de Dezembro/2024 - João da Silva,3000.00
+06/01/2025,Serviços de limpeza - Empresa Clean,600.00
+07/01/2025,Assinatura software de gestão - Licença anual,1200.00
+08/01/2025,Venda de produto XYZ - NF 00123,8500.00
+09/01/2025,Manutenção de computadores - Tech Suporte,350.00
+10/01/2025,Internet banda larga - Vivo Fibra,180.00
+11/01/2025,Pagamento de conta de água - Sabesp,120.00
+12/01/2025,Almoço de negócios - Restaurante Sabor,280.00
+13/01/2025,Material de consumo cozinha - Supermercado Bom Preço,95.00
+14/01/2025,Taxa bancária mensal - Banco A,45.00
+15/01/2025,Receita de juros - Aplicação CDB,150.00
+16/01/2025,Combustível veículo empresa - Posto Shell,180.00
+17/01/2025,Compra de passagens aéreas - Viagem a serviço - Decolar,950.00
+18/01/2025,Honorários contábeis - Escritório Contábil XYZ,700.00
+19/01/2025,Pagamento de seguro predial - Porto Seguro,400.00
+20/01/2025,Receita de aluguel de imóvel - Locação sala comercial,2500.00
+21/01/2025,Despesas com correios - Envio de documentos,35.00
+22/01/2025,Compra de notebooks para equipe - Loja de Eletrônicos,4200.00
+23/01/2025,Serviços gráficos - Cartões de visita,180.00
+24/01/2025,Recarga de celular corporativo - Vivo,80.00
+25/01/2025,Despesas com estacionamento - Reunião cliente,50.00
+26/01/2025,Mensalidade de plano de saúde - Unimed,850.00
+27/01/2025,Compra de flores para recepção - Floricultura,70.00
+28/01/2025,Treinamento de equipe - Curso de Excel,600.00
+29/01/2025,Reparo de ar condicionado - Climatização LTDA,450.00
+30/01/2025,Serviço de motoboy - Entrega urgente,60.00
+31/01/2025,Receita de consultoria em TI - Projeto Delta,18000.00
+01/02/2025,Pagamento de aluguel da sede - Fevereiro/2025,5500.00
+02/02/2025,Compra de canetas e cadernos - Bazar do Escritório,150.00
+03/02/2025,Transferência recebida de Cliente XYZ - Projeto Beta,22000.00
+04/02/2025,Fatura de internet e telefone - Net Combo - Fev/2025,320.00
+05/02/2025,Pró-labore dos sócios - Fev/2025,7000.00
+06/02/2025,Reparos hidráulicos - Encanador Z,280.00
+07/02/2025,Licença de software de segurança - Kaspersky,500.00
+08/02/2025,Receita de vendas ecommerce - Pedido #4567,10500.00
+09/02/2025,Atualização de sistema - Consultoria de TI,1800.00
+10/02/2025,Mensalidade de telefonia fixa - Oi Fixo,90.00
+11/02/2025,Despesas com lixo e reciclagem - Cia. Coleta,80.00
+12/02/2025,Jantar com fornecedores - Churrascaria Gaúcha,450.00
+13/02/2025,Produtos de limpeza para escritório - Atacadão,110.00
+14/02/2025,Tarifas bancárias - TED e DOC,30.00
+15/02/2025,Rendimento de aplicação financeira - LCI,200.00
+16/02/2025,Abastecimento de veículo - Posto Ipiranga,200.00
+17/02/2025,Passagens de ônibus - Viagem a negócios - Rodoviária,110.00
+18/02/2025,Consultoria jurídica - Dr. Silva,900.00
+19/02/2025,Pagamento de seguro de frota - Allianz,700.00
+20/02/2025,Receita de sublocação - Parte do escritório,1000.00
+21/02/2025,Envio de Sedex - Documentos importantes,40.00
+22/02/2025,Compra de impressora multifuncional - Kalunga,800.00
+23/02/2025,Criação de folder promocional - Gráfica Rápida,250.00
+24/02/2025,Serviços de telefonia celular - Claro,120.00
+25/02/2025,Táxi para compromisso - Cliente importante,70.00
+26/02/2025,Vale-alimentação funcionários - Sodexo,1500.00
+27/02/2025,Decoração do escritório - Loja de Decoração,300.00
+28/02/2025,Inscrição em workshop - Desenvolvimento de Habilidades,400.00
+01/03/2025,Pagamento de aluguel da sede - Março/2025,5500.00
+02/03/2025,Resma de papel A4 - Kalunga,80.00
+03/03/2025,PIX recebido de Empresa Gama - Desenvolvimento de Software,25000.00
+04/03/2025,Fatura de água e esgoto - Fev/2025,135.00
+05/03/2025,FGTS do mês - Fevereiro/2025,800.00
+06/03/2025,Conserto de porta - Serralheria do Zé,200.00
+07/03/2025,Assinatura de revista técnica - TI Agora,70.00
+08/03/2025,Venda de serviço de hospedagem - Cliente Virtual Host,5000.00
+09/03/2025,Formatação de computadores - Suporte de TI,400.00
+10/03/2025,Conta de telefone - Embratel - Mar/2025,280.00
+11/03/2025,Materiais para copa - Padaria Pão Quente,65.00
+12/03/2025,Coffee break para reunião - Pão de Queijo Mania,180.00
+13/03/2025,Compra de toner para impressora - Print Max,120.00
+14/03/2025,TED para fornecedor - Compras diversas,15.00
+15/03/2025,Resgate de aplicação financeira - Juros,90.00
+16/03/2025,Lavagem de carro da empresa - Lava Rápido,50.00
+17/03/2025,Hospedagem em hotel - Viagem a negócios - Hotel Central,300.00
+18/03/2025,Abono de férias - Funcionário XYZ,1200.00
+19/03/2025,Reembolso de despesas - Funcionário Pedro,250.00
+20/03/2025,Receita de treinamento - Curso online,3000.00
+21/03/2025,Compra de selos - Correios,25.00
+22/03/2025,Serviço de cópias e encadernação - Copiadora Digital,45.00
+23/03/2025,Recarga de cartucho de tinta - Cia. da Tinta,60.00
+24/03/2025,Conserto de telhado - Telhados e Cia,700.00
+25/03/2025,Compra de lixeiras - Utilidades do Lar,90.00
+26/03/2025,Almoço em equipe - Pizzaria do Chefe,220.00
+27/03/2025,Consultoria de marketing digital - Agência Online,1500.00
+28/03/2025,Pagamento de pedágios - Viagem a trabalho,35.00
+29/03/2025,Compra de copos descartáveis - Atacado de Descartáveis,40.00
+30/03/2025,Juros recebidos de aplicação - Poupança,20.00
+31/03/2025,Recebimento por venda de ativo - Equipamento antigo,500.00
+01/04/2025,Pagamento de aluguel da sede - Abril/2025,5500.00
+02/04/2025,Compra de pastas e fichários - Escritório Mais,180.00
+03/04/2025,PIX recebido de Cliente Giga - Suporte Técnico,12000.00
+04/04/2025,Conta de gás - Comgás - Fatura Mar/2025,90.00
+05/04/2025,Salário do mês de Março/2025 - Ana Paula,3200.00
+06/04/2025,Limpeza de fachada - Empresa Façade,750.00
+07/04/2025,Licença de antivírus - Norton,250.00
+08/04/2025,Venda de serviço de consultoria - Cliente Soluções,11000.00
+09/04/2025,Reparo de rede elétrica - Eletricista XPTO,400.00
+10/04/2025,Recarga de telefone fixo - Credfone,50.00
+11/04/2025,Materiais de limpeza para banheiro - Limpa Tudo,75.00
+12/04/2025,Lanche para reunião interna - Padaria Central,100.00
+13/04/2025,Compra de cartuchos de tinta - Kalunga,200.00
+14/04/2025,Pagamento de boleto - Fornecedor de papel,8.50
+15/04/2025,Juros sobre capital de giro - Banco Y,250.00
+16/04/2025,Troca de óleo do veículo - Auto Mecânica,150.00
+17/04/2025,Passagem aérea - Viagem de treinamento - Azul Linhas Aéreas,700.00
+18/04/2025,Serviços de segurança patrimonial - Vigia Max,500.00
+19/04/2025,Pagamento de seguro de responsabilidade civil - Bradesco Seguros,300.00
+20/04/2025,Receita de serviços de consultoria - Cliente Alfa,16000.00
+21/04/2025,Compra de envelopes - Papelaria Moderna,30.00
+22/04/2025,Manutenção de computadores - Assistência Técnica,280.00
+23/04/2025,Impressão de materiais de divulgação - Gráfica Expressa,150.00
+24/04/2025,Recarga de créditos para celular - Tim,60.00
+25/04/2025,Estacionamento - Viagem de campo,40.00
+26/04/2025,Plano odontológico funcionários - OdontoPrev,400.00
+27/04/2025,Material para copa - Gelo e descartáveis,55.00
+28/04/2025,Participação em feira de negócios - Estande,1000.00
+29/04/2025,Conserto de elevador - Empresa Elevadores,600.00
+30/04/2025,Serviço de entrega rápida - Loggi,80.00
+01/05/2025,Pagamento de aluguel da sede - Maio/2025,5500.00
+02/05/2025,Compra de pastas suspensas - Le Biscuit,95.00
+03/05/2025,Recebimento por desenvolvimento de app - Cliente Mobile,28000.00
+04/05/2025,Fatura de energia elétrica - Abril/2025,520.00
+05/05/2025,IRRF sobre salários - Abril/2025,1200.00
+06/05/2025,Manutenção de sistema de segurança - SegurPro,300.00
+07/05/2025,Assinatura de plataforma de e-mail marketing - Mailchimp,150.00
+08/05/2025,Venda de softwares - Licença corporativa,9000.00
+09/05/2025,Instalação de software - Técnico de TI,350.00
+10/05/2025,Conta de celular corporativo - Claro Empresas,210.00
+11/05/2025,Cesta básica funcionários - Supermercado X,800.00
+12/05/2025,Reunião almoço com equipe - Restaurante Dona Lúcia,350.00
+13/05/2025,Serviço de encadernação de relatórios - Copiarte,85.00
+14/05/2025,Taxa de manutenção de conta - Banco Z,38.00
+15/05/2025,Rendimentos de tesouro direto - Maio/2025,180.00
+16/05/2025,Revisão veicular - Centro Automotivo,480.00
+17/05/2025,Passagens de metrô e ônibus - Deslocamento urbano,25.00
+18/05/2025,Contratação de consultor - Recursos Humanos,1500.00
+19/05/2025,Pagamento de seguro de vida - SulAmérica,200.00
+20/05/2025,Receita de dividendos - Investimento em ações,700.00
+21/05/2025,Postagem de correspondência - ECT,15.00
+22/05/2025,Compra de cadeiras de escritório - Mobiliária Conforto,900.00
+23/05/2025,Anúncio em revista especializada - Revista Tech,600.00
+24/05/2025,Mensalidade de telefone e internet - Claro Residencial,250.00
+25/05/2025,Gasolina para viagens a serviço - Posto BR,190.00
+26/05/2025,Vale transporte funcionários - RioCard,600.00
+27/05/2025,Compras de material de limpeza - Varejão Higiene,130.00
+28/05/2025,Organização de evento corporativo - Buffet Sabor & Arte,2500.00
+29/05/2025,Pintura de parede - Pintor Profissional,400.00
+30/05/2025,Frete de produtos - Transportadora Rápida,110.00
+31/05/2025,Receita de licença de uso de software - Parceiro Tech,7000.00
+01/06/2025,Aluguel do espaço comercial - Junho/2025,5500.00
+02/06/2025,Compra de post-its e clipes - Armarinho da Esquina,65.00
+03/06/2025,PIX recebido de Cliente Mega - Licenciamento,30000.00
+04/06/2025,Fatura de telefone fixo - Tim Fixo - Mai/2025,180.00
+05/06/2025,Contribuição sindical - Junho/2025,150.00
+06/06/2025,Serviços de jardinagem - Jardineiro Silva,220.00
+07/06/2025,Compra de monitor para estação de trabalho - Fast Shop,1200.00
+08/06/2025,Venda de serviço de desenvolvimento web - Cliente Web Solutions,19000.00
+09/06/2025,Backup de dados em nuvem - Dropbox Business,80.00
+10/06/2025,Telefonia móvel corporativa - Vodafone,280.00
+11/06/2025,Produtos de higiene pessoal para escritório - Drogaria,90.00
+12/06/2025,Jantar de confraternização da equipe - Espaço Eventos,650.00
+13/06/2025,Serviço de desinfecção de ambientes - Saúde Ambiental,380.00
+14/06/2025,Taxa de saque - Caixa Eletrônico,5.00
+15/06/2025,Receita de aluguel de equipamento - Máquina de café,150.00
+16/06/2025,Troca de pneus do veículo da frota - Pneus Mania,700.00
+17/06/2025,Táxi para aeroporto - Viagem a negócios,120.00
+18/06/2025,Adiantamento salarial - Funcionário Carlos,500.00
+19/06/2025,Comissão de vendas - Vendedor Top,1500.00
+20/06/2025,Receita de consultoria financeira - Cliente Capital,22000.00
+21/06/2025,Compra de carimbos e almofadas - Gráfica Rápida,70.00
+22/06/2025,Manutenção de sistema de ventilação - Air Confort,420.00
+23/06/2025,Campanha de e-mail marketing - LeadLovers,180.00
+24/06/2025,Assinatura de plano de dados móvel - Claro,100.00
+25/06/2025,Uber para reuniões externas,65.00
+26/06/2025,Plano de previdência privada - Bradesco Previdência,300.00
+27/06/2025,Compra de filtro de água - Purificador Plus,180.00
+28/06/2025,Consultoria de SEO - Rankeia Agora,900.00
+29/06/2025,Reparo de fiação elétrica - Eletro Serve,270.00
+30/06/2025,Serviço de lavanderia para uniformes - Lavanderia Express,90.00
