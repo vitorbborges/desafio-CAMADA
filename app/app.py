@@ -45,7 +45,7 @@ if openai_api_key:
         st.session_state.accountant = accountant
         st.session_state.test_rows = list(test_df.iterrows())
 
-with st.sidebar
+with st.sidebar:
     st.subheader("🧑‍💻 Workflow")
     try:
         graph_bytes = st.session_state.accountant.plot_graph()
