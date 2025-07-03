@@ -11,7 +11,6 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 from src.llm_application import LLMAccountant, doc2lancamento, row2doc
 
-# Initialize session state first
 if 'current_index' not in st.session_state:
     st.session_state.current_index = 0
 
@@ -25,7 +24,6 @@ with st.sidebar:
         )
         "[Get an OpenAI API key](https://platform.openai.com/account/api-keys)"
     
-    # Only set environment variable if we have a non-empty key
     if openai_api_key and openai_api_key.strip():
         os.environ['OPENAI_API_KEY'] = openai_api_key
 
@@ -62,7 +60,7 @@ if openai_api_key and openai_api_key.strip():
         doc = row2doc((idx, row))
         lancamento = doc2lancamento(doc)
         response = st.session_state.accountant.invoke(lancamento)
-        category = response.category
+        category = response['category']
         
         data = {
             'Descrição': [''.join(response.desc.split(';')[:-1])],
