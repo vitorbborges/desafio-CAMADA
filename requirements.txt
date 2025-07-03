@@ -6,5 +6,4 @@ langchain_openai
 uuid
 langgraph
 faiss-cpu
-IPython
 matplotlib

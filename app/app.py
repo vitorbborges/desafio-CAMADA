@@ -4,11 +4,14 @@ import streamlit as st
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from langchain_core.documents import Document
+import os
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_ROOT))
 
 from src.llm_application import LLMAccountant, doc2lancamento, row2doc
+
+openai_api_key = os.getenv("OPENAI_API_KEY")
 
 if 'current_index' not in st.session_state:
     st.session_state.current_index = 0
@@ -31,11 +34,11 @@ if 'accountant' not in st.session_state:
 
 # UI
 with st.sidebar:
-    openai_api_key = st.text_input(
-        "OpenAI API Key 🔐", key="langchain_search_api_key_openai", type="password"
-    )
-    "[Get an OpenAI API key](https://platform.openai.com/account/api-keys)"
-    "[View the source code](https://github.com/streamlit/llm-examples/blob/main/pages/2_Chat_with_search.py)"
+    if not openai_api_key:
+        openai_api_key = st.text_input(
+            "OpenAI API Key 🔐", key="langchain_search_api_key_openai", type="password"
+        )
+        "[Get an OpenAI API key](https://platform.openai.com/account/api-keys)"
 
     st.subheader("🧑‍💻 Workflow")
     try:
@@ -49,9 +52,9 @@ st.title("🧾 IA do Contador - MVP")
 st.progress((st.session_state.current_index + 1) / len(st.session_state.test_rows), text="Progresso de Revisão")
 
 if st.session_state.current_index < len(st.session_state.test_rows):
-    _, row = st.session_state.test_rows[st.session_state.current_index]
+    idx, row = st.session_state.test_rows[st.session_state.current_index]
     
-    doc = row2doc(row)
+    doc = row2doc((idx, row))
     lancamento = doc2lancamento(doc)
     response = st.session_state.accountant.invoke(lancamento)
     category = response['category']

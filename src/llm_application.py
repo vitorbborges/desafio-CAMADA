@@ -16,7 +16,6 @@ from langchain_openai import OpenAIEmbeddings
 from langchain_core.prompts import ChatPromptTemplate
 import faiss
 from langgraph.graph import StateGraph, END
-from IPython.display import Image, display
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 from io import BytesIO
@@ -25,10 +24,6 @@ PROJECT_ROOT = Path(__file__).parent.parent  # Adjust based on your file structu
 FILE_PATH = PROJECT_ROOT / "src"
 
 load_dotenv(dotenv_path=".env", override=True)
-
-if not os.environ.get("OPENAI_API_KEY"):
-  os.environ["OPENAI_API_KEY"] = getpass.getpass("Enter API key for OpenAI: ")
-
 
 class ResultClassification(BaseModel):
     category: str = Field(default="Inconclusivo", description="Conta contábil presente na lista de classes conhecidas")
