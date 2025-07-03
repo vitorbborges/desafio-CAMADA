@@ -75,7 +75,7 @@ class LLMAccountant:
     def __init__(self, threshold: float = 0.8, k: int = 10):
         self.threshold = threshold
         self.embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
-        self.model = init_chat_model("gpt-4o-mini", model_provider="openai")
+        self.model = init_chat_model("gpt-3.5-turbo", model_provider="openai")
         self.index = faiss.IndexFlatL2(len(self.embeddings.embed_query("test")))
         self.source_of_truth = FAISS(
             embedding_function=self.embeddings,
