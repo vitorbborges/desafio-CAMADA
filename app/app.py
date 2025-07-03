@@ -63,7 +63,7 @@ if openai_api_key and openai_api_key.strip():
         category = response['category']
         
         data = {
-            'Descrição': [''.join(response.desc.split(';')[:-1])],
+            'Descrição': [''.join(response['desc'].split(';')[:-1])],
             'Valor': [f"R${response['value']}"],
             'Conta Contábil': [category.category],
             'Justificativa LLM': [category.explanation],
