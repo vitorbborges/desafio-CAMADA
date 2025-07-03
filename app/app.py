@@ -39,6 +39,7 @@ with st.sidebar:
             "OpenAI API Key 🔐", key="langchain_search_api_key_openai", type="password"
         )
         "[Get an OpenAI API key](https://platform.openai.com/account/api-keys)"
+        os.environ['OPENAI_API_KEY'] = openai_api_key
 
     st.subheader("🧑‍💻 Workflow")
     try:
@@ -47,55 +48,56 @@ with st.sidebar:
     except Exception as e:
         st.error(f"Could not load workflow graph: {e}")
 
-st.title("🧾 IA do Contador - MVP")
+if openai_api_key:
+    st.title("🧾 IA do Contador - MVP")
 
-st.progress((st.session_state.current_index + 1) / len(st.session_state.test_rows), text="Progresso de Revisão")
+    st.progress((st.session_state.current_index + 1) / len(st.session_state.test_rows), text="Progresso de Revisão")
 
-if st.session_state.current_index < len(st.session_state.test_rows):
-    idx, row = st.session_state.test_rows[st.session_state.current_index]
-    
-    doc = row2doc((idx, row))
-    lancamento = doc2lancamento(doc)
-    response = st.session_state.accountant.invoke(lancamento)
-    category = response['category']
-    
-    data = {
-        'Descrição': [''.join(response["desc"].split(';')[:-1])],
-        'Valor': [f"R${response['value']}"],
-        'Conta Contábil': [category.category],
-        'Justificativa LLM': [category.explanation],
-        'Status': [response['status']],
-        'Data': [response["date"]],
-    }
-    
-    dataframe = pd.DataFrame(data).set_index('Data')
-    st.markdown(dataframe.to_markdown())
-    
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        if st.button("Aprovar Conta Contábil", key="approve_btn", icon="✅", use_container_width=True):
-            st.success("Lançamento aprovado!")
-            lancamento.status = "Confirmado"
-            st.session_state.accountant.add_source_of_truth(doc)
-            st.session_state.current_index += 1
-            st.rerun()
-    
-    with col2:
-        if st.button("Rejeitar Conta Contábil", key="reject_btn", icon="❌", use_container_width=True):
-            st.error("Lançamento rejeitado!")
-            st.session_state.show_input = True
-            st.rerun()
-    
-    if st.session_state.get('show_input', False):
-        true_category = st.text_input(
-            "Por favor, inclua a verdadeira categoria contábil:",
-            key="true_category_input"
-        )
-        if st.button("Confirmar", key="confirm_btn"):
-            doc.metadata['category'] = true_category
-            lancamento.status = "Alterado"
-            st.session_state.accountant.add_source_of_truth(doc)
-            st.session_state.show_input = False
-            st.session_state.current_index += 1
-            st.rerun()
+    if st.session_state.current_index < len(st.session_state.test_rows):
+        idx, row = st.session_state.test_rows[st.session_state.current_index]
+        
+        doc = row2doc((idx, row))
+        lancamento = doc2lancamento(doc)
+        response = st.session_state.accountant.invoke(lancamento)
+        category = response['category']
+        
+        data = {
+            'Descrição': [''.join(response["desc"].split(';')[:-1])],
+            'Valor': [f"R${response['value']}"],
+            'Conta Contábil': [category.category],
+            'Justificativa LLM': [category.explanation],
+            'Status': [response['status']],
+            'Data': [response["date"]],
+        }
+        
+        dataframe = pd.DataFrame(data).set_index('Data')
+        st.markdown(dataframe.to_markdown())
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            if st.button("Aprovar Conta Contábil", key="approve_btn", icon="✅", use_container_width=True):
+                st.success("Lançamento aprovado!")
+                lancamento.status = "Confirmado"
+                st.session_state.accountant.add_source_of_truth(doc)
+                st.session_state.current_index += 1
+                st.rerun()
+        
+        with col2:
+            if st.button("Rejeitar Conta Contábil", key="reject_btn", icon="❌", use_container_width=True):
+                st.error("Lançamento rejeitado!")
+                st.session_state.show_input = True
+                st.rerun()
+        
+        if st.session_state.get('show_input', False):
+            true_category = st.text_input(
+                "Por favor, inclua a verdadeira categoria contábil:",
+                key="true_category_input"
+            )
+            if st.button("Confirmar", key="confirm_btn"):
+                doc.metadata['category'] = true_category
+                lancamento.status = "Alterado"
+                st.session_state.accountant.add_source_of_truth(doc)
+                st.session_state.show_input = False
+                st.session_state.current_index += 1
+                st.rerun()
