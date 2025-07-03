@@ -13,25 +13,6 @@ from src.llm_application import LLMAccountant, doc2lancamento, row2doc
 
 openai_api_key = os.getenv("OPENAI_API_KEY")
 
-if 'current_index' not in st.session_state:
-    st.session_state.current_index = 0
-if 'accountant' not in st.session_state:
-    # Preparation
-    df = pd.read_csv("data/input_com_categorias.csv")
-    train_df, test_df = train_test_split(df, test_size=0.5, random_state=42)
-    
-    accountant = LLMAccountant()
-    docs = [Document(page_content=row["Descrição da Transação"]+"; Valor: R$"+str(row["Valor"]), metadata={
-        "category": row["Conta Contábil"],
-        "date": row['Data'],
-        "value": row['Valor']
-    }) for _, row in train_df.iterrows()]
-    accountant.add_source_of_truth(docs)
-    
-    st.session_state.accountant = accountant
-    st.session_state.test_rows = list(test_df.iterrows())
-
-
 # UI
 with st.sidebar:
     if not openai_api_key:
@@ -48,7 +29,29 @@ with st.sidebar:
     except Exception as e:
         st.error(f"Could not load workflow graph: {e}")
 
+
+
+
 if openai_api_key:
+    
+    if 'current_index' not in st.session_state:
+        st.session_state.current_index = 0
+    if 'accountant' not in st.session_state:
+        # Preparation
+        df = pd.read_csv("data/input_com_categorias.csv")
+        train_df, test_df = train_test_split(df, test_size=0.5, random_state=42)
+        
+        accountant = LLMAccountant()
+        docs = [Document(page_content=row["Descrição da Transação"]+"; Valor: R$"+str(row["Valor"]), metadata={
+            "category": row["Conta Contábil"],
+            "date": row['Data'],
+            "value": row['Valor']
+        }) for _, row in train_df.iterrows()]
+        accountant.add_source_of_truth(docs)
+        
+        st.session_state.accountant = accountant
+        st.session_state.test_rows = list(test_df.iterrows())
+
     st.title("🧾 IA do Contador - MVP")
 
     st.progress((st.session_state.current_index + 1) / len(st.session_state.test_rows), text="Progresso de Revisão")
