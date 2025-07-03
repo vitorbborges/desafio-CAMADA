@@ -79,7 +79,7 @@ if openai_api_key and openai_api_key.strip():
         with col1:
             if st.button("Aprovar Conta Contábil", key="approve_btn", icon="✅", use_container_width=True):
                 st.success("Lançamento aprovado!")
-                response.status = "Confirmado"
+                response['status'] = "Confirmado"
                 st.session_state.accountant.add_source_of_truth(doc)
                 st.session_state.current_index += 1
                 st.rerun()
@@ -97,7 +97,7 @@ if openai_api_key and openai_api_key.strip():
             )
             if st.button("Confirmar", key="confirm_btn"):
                 doc.metadata['category'] = true_category
-                response.status = "Alterado"
+                response['status'] = "Alterado"
                 st.session_state.accountant.add_source_of_truth(doc)
                 st.session_state.show_input = False
                 st.session_state.current_index += 1
