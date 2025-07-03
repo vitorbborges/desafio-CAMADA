@@ -64,11 +64,11 @@ if openai_api_key and openai_api_key.strip():
         
         data = {
             'Descrição': [''.join(response.desc.split(';')[:-1])],
-            'Valor': [f"R${response.value}"],
+            'Valor': [f"R${response['value']}"],
             'Conta Contábil': [category.category],
             'Justificativa LLM': [category.explanation],
-            'Status': [response.status],
-            'Data': [response.date],
+            'Status': [response['status']],
+            'Data': [response['date']],
         }
         
         dataframe = pd.DataFrame(data).set_index('Data')
